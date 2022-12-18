@@ -12,6 +12,6 @@ public class GetOrderListTest {
     @DisplayName("Get list of orders")
     public void getOrderList() {
         ValidatableResponse creationResponse = client.getOrdersList();
-        check.gettingSuccessfully(creationResponse);
+        check.gotSuccessfully(creationResponse);
     }
 }

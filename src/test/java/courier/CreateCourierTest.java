@@ -17,7 +17,7 @@ public class CreateCourierTest {
     public void deleteCourier(){
         if (courierId > 0) {
             ValidatableResponse response = client.delete(courierId);
-            check.deleteSuccessfully(response);
+            check.deletedSuccessfully(response);
         }
     }
 

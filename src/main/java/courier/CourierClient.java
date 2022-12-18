@@ -3,6 +3,8 @@ package courier;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class CourierClient {
@@ -34,13 +36,13 @@ public class CourierClient {
     }
 
     public ValidatableResponse delete(int courierId) {
-        String json = String.format("{\"id\": \"%d\"}", courierId);
+        var mapId = Map.of("id", courierId);
         return given()
                 .log().all()
                 .contentType(ContentType.JSON)
                 .baseUri(BASE_URI)
                 .and()
-                .body(json)
+                .body(mapId)
                 .when()
                 .delete(ROOT + "/" + courierId)
                 .then().log().all();

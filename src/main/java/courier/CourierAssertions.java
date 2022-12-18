@@ -51,7 +51,7 @@ public class CourierAssertions {
                 .extract().path("id");
     }
 
-    public void deleteSuccessfully(ValidatableResponse response) {
+    public void deletedSuccessfully(ValidatableResponse response) {
         response.assertThat()
                 .statusCode(200)
                 .body("ok", is(true));

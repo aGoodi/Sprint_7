@@ -15,7 +15,7 @@ public class LoginCourierTest {
     public void deleteCourier(){
         if (courierId > 0) {
             ValidatableResponse response = client.delete(courierId);
-            check.deleteSuccessfully(response);
+            check.deletedSuccessfully(response);
         }
     }
 
@@ -46,7 +46,7 @@ public class LoginCourierTest {
 
     @Test
     @DisplayName("Login courier with invalid login")
-    public void loggedInFailsWithInvalidLogin() {
+    public void loginCourierWithInvalidLogin() {
         Credentials creds = new Credentials("123", "123");
         ValidatableResponse loginResponse = client.login(creds);
         check.loggedInFailsWithInvalidLogin(loginResponse);

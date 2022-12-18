@@ -23,7 +23,7 @@ import org.junit.Test;
 
         if (courierId > 0) {
             ValidatableResponse response = client.delete(courierId);
-            check.deleteSuccessfully(response);
+            check.deletedSuccessfully(response);
             }
     }
 }

@@ -11,7 +11,7 @@ public class OrderAssertions {
                 .statusCode(201)
                 .body("track", greaterThan(0));
     }
-    public void gettingSuccessfully(ValidatableResponse response) {
+    public void gotSuccessfully(ValidatableResponse response) {
         response.assertThat()
                 .statusCode(200)
                 .body("orders", notNullValue());
